@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { AppBar } from "@material-ui/core";
 import { Toolbar } from "@material-ui/core";
-import Login from "../Login";
+import Login from "../containers/Login";
 import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 

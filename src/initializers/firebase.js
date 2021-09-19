@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-const config = {
+var config = {
   apiKey: "AIzaSyD2ZVUZsOCG49hoiPhtSeOG2-JL3ULebrI",
   authDomain: "albumes-facilito-react-45efb.firebaseapp.com",
   projectId: "albumes-facilito-react-45efb",
@@ -12,6 +12,7 @@ const config = {
 };
 
 initializeApp(config);
+const auth = getAuth();
 
 // TODO: Verificar si se puede refactorizar
 const googleLogin = () => {
@@ -28,6 +29,8 @@ const googleLogin = () => {
       const user = result.user;
       // ...
       console.log("Ingresa con exito");
+
+      return token;
     })
     .catch((error) => {
       // Handle Errors here.
@@ -41,4 +44,5 @@ const googleLogin = () => {
     });
 };
 
-export default googleLogin;
+export { auth };
+//export default googleLogin;
