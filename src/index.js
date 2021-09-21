@@ -7,10 +7,10 @@ import { Provider } from "react-redux";
 
 import store from "./initializers/store";
 import { setUser, clearUser } from "./initializers/actions";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-getAuth().onAuthStateChanged((user) => {
-  console.log(user);
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
   if (user) {
     store.dispatch(setUser(user));
   } else {

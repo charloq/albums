@@ -11,7 +11,7 @@ export const clearToken = () => {
   };
 };
 
-export const setUser = () => {
+export const setUser = (user) => {
   return {
     type: "LOGGED_IN",
     user: user,
@@ -21,5 +21,45 @@ export const setUser = () => {
 export const clearUser = () => {
   return {
     type: "SIGN_OUT",
+  };
+};
+
+export const setAlbums = (albums) => {
+  return {
+    type: "SET_ALBUMS",
+    albums: albums,
+  };
+};
+
+export const clearAlbums = () => {
+  return {
+    type: "CLEAR_ALBUMS",
+  };
+};
+
+export const setAlbum = (album) => {
+  return {
+    type: "SET_ALBUM",
+    album: album,
+  };
+};
+
+export const clearAlbum = () => {
+  return {
+    type: "CLEAR_ALBUM",
+  };
+
+};
+
+export const setPhotos = (photos) => {
+  return {
+    type: "SET_PHOTOS",
+    photos: photos,
+  };
+};
+
+export const clearPhotos = () => {
+  return {
+    type: "CLEAR_PHOTOS",
   };
 };
