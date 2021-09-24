@@ -14,8 +14,12 @@ const AuthElements = function (props) {
   const loginButton = () => {
     if (props.user)
       return [
-        <Avatar src={props.user.providerData[0].photoURL} />,
-        <IconButton onClick={props.logout} color="inherit">
+        <Avatar key="auth-avatar" src={props.user.providerData[0].photoURL} />,
+        <IconButton
+          key="auth-icon-button"
+          onClick={props.logout}
+          color="inherit"
+        >
           <ExitToApp />
         </IconButton>,
       ];

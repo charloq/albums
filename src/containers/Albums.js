@@ -14,7 +14,10 @@ class Albums extends Component {
         Authorization: `Bearer ${this.props.token}`,
       },
     })
-      .then(console.log())
+      .then((response) => {
+        console.log(response);
+        this.props.setAlbums(response.data.albums);
+      })
       .catch(console.log);
   }
 
@@ -29,13 +32,13 @@ class Albums extends Component {
   }
 
   render() {
-    return [
-      this.props.mainAlbum ? this.props.mainAlbum.title : "",
+    return (
       <AlbumsList
         albums={this.props.albums}
+        mainAlbum={this.props.mainAlbum}
         setAlbum={this.props.setAlbum}
-      ></AlbumsList>,
-    ];
+      ></AlbumsList>
+    );
   }
 }
 
